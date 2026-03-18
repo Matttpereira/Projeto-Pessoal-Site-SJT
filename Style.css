@@ -1,0 +1,53 @@
+body {
+    font-family: 'Times New Roman', sans-serif;
+    margin: 0;
+}
+
+.imagem-fundo {
+    background-image: url(Fundo.png);
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.barra-superior {
+
+    background-color: #a8131385;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    font-size: 14px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+
+.redes-sociais a {
+
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.redes-sociais a:hover {
+
+    text-decoration: underline;
+}
+
+.menu {
+
+    background-color: #20bc0f80;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+}
