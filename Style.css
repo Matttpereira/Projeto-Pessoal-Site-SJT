@@ -1,6 +1,21 @@
 body {
-    font-family: 'Lugrasimo', sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     margin: 0;
+    background-color: #a48b69;
+}
+
+.barra-superior {
+    position: absolute;
+    top: 30px;
+    left: 54%;
+    z-index: 10;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 20px;
+    font-size: 20px;
+
 }
 
 .localizacao a {
@@ -8,12 +23,18 @@ body {
     text-decoration: none;
 }
 
+.redes-sociais a:hover {
+
+    text-decoration: underline;
+}
+
 .imagem-fundo {
     position: relative;
-    background-image: url(Fundo.png);
+    z-index: 0;
+    background-image: url(FundoAdemir.jpeg);
     background-size: cover;
     background-position: center;
-    height: 50vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,25 +50,6 @@ body {
     opacity: 0.7;
 }
 
-.barra-superior {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 97.4%;
-    z-index: 10;
-    background-color: #a81313d9;
-    color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 20px;
-    font-size: 14px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-
-
-
 .redes-sociais a {
 
     color: white;
@@ -55,19 +57,26 @@ body {
     margin-left: 15px;
 }
 
-.redes-sociais a:hover {
-
-    text-decoration: underline;
+.menu {
+    position: absolute;
+    top: 90%;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 20px;
+    font-size: 20px;
 }
 
-.menu {
+.menu a {
+    color: white;
+    text-decoration: none;
+}
 
-    background-color: #289e04;
-    color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 20px;
-    font-size: 14px;
-    border-radius: 5px;
+.menu a:hover {
+    text-decoration: underline;
+    transform: scale(1.05);
+    opacity: 0.7;
 }
