@@ -7,7 +7,7 @@ body {
 .barra-superior {
     position: absolute;
     top: 30px;
-    left: 54%;
+    right: 0;
     z-index: 10;
     color: rgb(255, 255, 255);
     display: flex;
@@ -15,11 +15,6 @@ body {
     align-items: center;
     padding: 7px 20px;
     font-size: 20px;
-}
-
-.localizacao a {
-    color: white;
-    text-decoration: none;
 }
 
 .redes-sociais a:hover {
@@ -78,4 +73,14 @@ body {
     text-decoration: underline;
     transform: scale(1.05);
     opacity: 0.7;
+}
+
+.rodape {
+    background-color: rgb(69, 28, 4);
+    color: white;
+}
+
+.localizacao a {
+    color: white;
+    text-decoration: none;
 }
