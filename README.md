@@ -1,52 +1,63 @@
 # ⛪ Site Paróquia São Judas Tadeu - Santo André
 
-Este projeto consiste no desenvolvimento do website da **Paróquia São Judas Tadeu**, localizada em Santo André - SP. O foco principal é fornecer uma interface limpa e funcional para os fiéis e a comunidade local.
+Este projeto é o website da **Paróquia São Judas Tadeu**, em Santo André - SP. O foco é oferecer uma interface limpa e funcional para os fiéis e a comunidade local.
+
+Também é o meu projeto de estudo de HTML e CSS.
 
 ---
 
 ## 🚀 Status do Projeto
-> [!IMPORTANT]  
-> **Em Desenvolvimento:** A estrutura base (Layout) foi estabelecida, com a criação da página inicial e do menu de navegação que servirá de padrão para as demais páginas.
+> [!IMPORTANT]
+> **Em desenvolvimento:** o layout base está pronto (página inicial, páginas internas, menu, rodapé e versão para celular). Falta escrever o conteúdo de cada página.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
-* **HTML5**: Estruturação semântica da página.
-* **CSS3**: Estilização e layout (uso de fontes externas e componentes visuais).
-* **Google Fonts**: Integração da tipografia *Bebas Neue*.
+* **HTML5**: estrutura semântica das páginas.
+* **CSS3**: estilo, variáveis CSS, Flexbox, Grid e media queries (responsividade).
+* **JavaScript**: componentes reaproveitados em todas as páginas (barra superior, menu e rodapé).
+* **Google Fonts**: tipografia *Bebas Neue*.
 
 ---
 
 ## 📋 Funcionalidades Atuais
-### Página Inicial (Layout Base)
-* **Barra Superior**: Contém a localização física com link direto para o Google Maps e links para redes sociais.
-* **Cabeçalho**: Logotipo centralizado com navegação rápida.
-* **Menu de Navegação**: Estrutura padronizada para manter a identidade visual em todo o projeto, incluindo:
-  * Paróquia
-  * Pastorais
-  * Dízimo
-  * Horários
-  * Padroeiro
-  * Contato
+* **Barra superior**: endereço com link para o Google Maps e links para as redes sociais.
+* **Página inicial**: imagem de fundo com o logo e cartões que levam para cada página.
+* **Menu principal**: aparece em todas as páginas e destaca a página atual.
+* **Páginas internas**: Paróquia, Pastorais, Dízimo, Horários e Padroeiro (com banner e título).
+* **Rodapé**: endereço, redes sociais e direitos autorais.
+* **Responsivo**: o layout se adapta a telas de celular.
 
 ---
 
 ## 📂 Estrutura de Arquivos
-* `SJT_pagina_inicial.html`: Código fonte da página inicial.
-* `Style.css`: Estilização global do projeto.
-* `LogoMaster.png`: Identidade visual utilizada no header.
+```
+├── index.html          → página inicial
+├── paroquia.html       → páginas internas
+├── pastorais.html
+├── dizimo.html
+├── horarios.html
+├── padroeiro.html
+├── testes.html         → rascunho para testar ideias (fora do menu)
+├── css/
+│   └── style.css       → estilo de todo o site
+├── js/
+│   └── components.js   → barra superior, menu e rodapé
+└── img/                → imagens (logo, fundos e fotos dos cartões)
+```
 
 ---
 
 ## 🚧 Próximos Passos
-- [ ] Implementar o conteúdo principal (Body) da página inicial.
-- [ ] Criar a página interna "Paróquia".
-- [ ] Desenvolver o rodapé institucional.
-- [ ] Aplicar técnicas de responsividade para visualização em celulares.
+- [x] Criar a página inicial e as páginas internas.
+- [x] Desenvolver o rodapé institucional.
+- [x] Aplicar responsividade para celulares.
+- [ ] Escrever o conteúdo de cada página interna.
+- [ ] Criar uma página ou seção de Contato.
+- [ ] Publicar o site (por exemplo, no GitHub Pages).
 
 ---
 
 ## 📝 Como visualizar
 1. Clone este repositório.
-2. Certifique-se de que o arquivo `LogoMaster.png` está na mesma pasta que o HTML.
-3. Abra o arquivo `SJT_pagina_inicial.html` em qualquer navegador web.
+2. Abra o arquivo `index.html` em qualquer navegador.

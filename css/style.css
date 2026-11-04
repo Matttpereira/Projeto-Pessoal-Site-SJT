@@ -1,0 +1,262 @@
+/* =========================================================
+   VARIÁVEIS
+   Mude uma cor aqui e ela muda no site inteiro.
+   ========================================================= */
+:root {
+    --cor-fundo: #a48b69;
+    --cor-marrom: #5a4632;
+    --cor-dourado: #c2a55e;
+    --cor-texto: #2b2b2b;
+    --cor-branco: #ffffff;
+
+    --fonte-principal: 'Bebas Neue', sans-serif;
+    --largura-conteudo: 1100px;
+    --transicao: 0.3s;
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================================================
+   BARRA SUPERIOR (endereço + redes sociais)
+   Fica por cima da imagem de fundo / banner.
+   ========================================================= */
+.barra-superior {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    font-size: 20px;
+}
+
+.barra-superior a {
+    color: var(--cor-branco);
+    text-decoration: none;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.barra-superior a:hover {
+    text-decoration: underline;
+}
+
+.redes-sociais a {
+    margin-left: 15px;
+}
+
+/* =========================================================
+   TOPO DAS PÁGINAS (home e páginas internas)
+   ========================================================= */
+.imagem-fundo,
+.imagem-fundo-paginas {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.imagem-fundo {
+    justify-content: center;
+    height: 100vh;
+    background-image: url(../img/fundo-home.jpg);
+}
+
+.imagem-fundo-paginas {
+    height: 50vh;
+    padding: 0 20px;
+    background-image: url(../img/banner-paginas.jpg);
+}
+
+.imagem-fundo img {
+    width: min(725px, 90vw);
+}
+
+.imagem-fundo-paginas img {
+    width: min(525px, 80vw);
+}
+
+.imagem-fundo img,
+.imagem-fundo-paginas img {
+    display: block;
+    transition: transform var(--transicao), opacity var(--transicao);
+}
+
+.imagem-fundo a:hover img,
+.imagem-fundo-paginas a:hover img {
+    transform: scale(1.05);
+    opacity: 0.7;
+}
+
+/* =========================================================
+   MENU PRINCIPAL (criado pelo js/components.js)
+   ========================================================= */
+.menu-principal {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background-color: var(--cor-marrom);
+}
+
+.menu-principal ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px 30px;
+    margin: 0;
+    padding: 12px 20px;
+    list-style: none;
+}
+
+.menu-principal a {
+    color: var(--cor-branco);
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color var(--transicao);
+}
+
+.menu-principal a:hover,
+.menu-principal a[aria-current="page"] {
+    border-bottom-color: var(--cor-dourado);
+}
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+.conteudo {
+    max-width: var(--largura-conteudo);
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.titulo-pagina {
+    text-align: center;
+    font-size: 50px;
+    color: #000000;
+}
+
+/* =========================================================
+   CARTÕES DA PÁGINA INICIAL
+   Foto à esquerda + faixa dourada com o nome à direita.
+   ========================================================= */
+.cartoes {
+    display: grid;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cartao {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    height: 220px;
+    overflow: hidden;
+    color: var(--cor-texto);
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform var(--transicao), opacity var(--transicao);
+}
+
+.cartao:hover {
+    transform: scale(1.02);
+    opacity: 0.85;
+}
+
+.cartao img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Mostra o lado esquerdo da foto quando ela é cortada */
+.cartao img.foto-esquerda {
+    object-position: left;
+}
+
+.cartao-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    font-size: clamp(32px, 5vw, 64px);
+    line-height: 1;
+    background-color: var(--cor-dourado);
+}
+
+/* =========================================================
+   RODAPÉ (criado pelo js/components.js)
+   ========================================================= */
+.rodape {
+    margin-top: 40px;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 20px;
+    color: var(--cor-branco);
+    background-color: var(--cor-marrom);
+}
+
+.rodape p {
+    margin: 8px 0;
+}
+
+.rodape a {
+    color: var(--cor-branco);
+}
+
+.rodape .redes-sociais a {
+    margin: 0 8px;
+}
+
+/* =========================================================
+   CELULAR (telas até 700px)
+   ========================================================= */
+@media (max-width: 700px) {
+    .barra-superior {
+        flex-direction: column;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .imagem-fundo-paginas {
+        justify-content: center;
+        height: 40vh;
+    }
+
+    .menu-principal a {
+        font-size: 18px;
+    }
+
+    .titulo-pagina {
+        font-size: 38px;
+    }
+
+    .cartao {
+        grid-template-columns: 1fr 1fr;
+        height: 140px;
+    }
+}
