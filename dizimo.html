@@ -7,26 +7,84 @@
     <title>Dízimo | Paróquia São Judas Tadeu - Santo André</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <section class="imagem-fundo-paginas">
-        <a href="index.html">
-            <img src="img/logo.png" width="525" height="106" alt="Paróquia São Judas Tadeu - página inicial">
-        </a>
-    </section>
+    <main>
+        <section class="topo-pagina fundo-verde">
+            <div class="container">
+                <span class="sobretitulo">Partilha e gratidão</span>
+                <h1>Dízimo</h1>
+                <p class="texto-grande texto-claro">[AQUI FICARIA UMA FRASE SOBRE O DÍZIMO COMO GESTO DE FÉ E PARTILHA]</p>
+            </div>
+        </section>
 
-    <!-- O menu é colocado aqui pelo js/components.js -->
+        <section class="secao">
+            <div class="container duas-colunas">
+                <div class="pilha">
+                    <h2>Por que ser dizimista?</h2>
+                    <p><span class="preencher">[AQUI FICARIA O TEXTO EXPLICANDO O QUE É O DÍZIMO E COMO ELE AJUDA A PARÓQUIA]</span></p>
+                    <p><span class="preencher">[AQUI FICARIA ONDE OS RECURSOS SÃO APLICADOS — EX.: OBRAS, AÇÃO SOCIAL, MANUTENÇÃO]</span></p>
+                </div>
+                <div class="foto-provisoria" style="height: 340px;">[FOTO DA COMUNIDADE OU DE UMA AÇÃO SOCIAL DA PARÓQUIA]</div>
+            </div>
+        </section>
 
-    <main class="conteudo">
-        <h1 class="titulo-pagina">Dízimo</h1>
+        <section class="secao fundo-verde-claro">
+            <div class="container pilha-grande">
+                <h2>Como contribuir</h2>
+                <div class="grade">
+                    <div class="cartao cartao-claro forma-contribuir">
+                        <h3>PIX</h3>
+                        <div class="foto-provisoria qr-code">[QR CODE DO PIX]</div>
+                        <p class="texto-pequeno"><strong>Chave:</strong> <span id="chave-pix" class="preencher">[CHAVE PIX DA PARÓQUIA]</span></p>
+                        <p class="texto-pequeno"><strong>Favorecido:</strong> <span class="preencher">[NOME DO FAVORECIDO / CNPJ]</span></p>
+                        <button type="button" id="copiar-pix" class="btn btn-verde">Copiar chave PIX</button>
+                    </div>
+                    <div class="cartao cartao-claro forma-contribuir">
+                        <h3>Transferência bancária</h3>
+                        <p class="texto-pequeno"><strong>Banco:</strong> <span class="preencher">[NOME DO BANCO]</span></p>
+                        <p class="texto-pequeno"><strong>Agência:</strong> <span class="preencher">[AGÊNCIA]</span></p>
+                        <p class="texto-pequeno"><strong>Conta:</strong> <span class="preencher">[CONTA]</span></p>
+                        <p class="texto-pequeno"><strong>CNPJ:</strong> <span class="preencher">[CNPJ DA PARÓQUIA]</span></p>
+                    </div>
+                    <div class="cartao cartao-claro forma-contribuir">
+                        <h3>Na paróquia</h3>
+                        <p class="texto-pequeno"><span class="preencher">[ONDE ENTREGAR O DÍZIMO PESSOALMENTE — EX.: SECRETARIA, APÓS AS MISSAS]</span></p>
+                        <p class="texto-pequeno"><strong>Horário:</strong> <span class="preencher">[HORÁRIO DE ATENDIMENTO]</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Conteúdo da página aqui -->
+        <section class="secao">
+            <div class="container container-estreito pilha">
+                <div class="pilha-curta">
+                    <span class="sobretitulo">Pastoral do Dízimo</span>
+                    <h2>Cadastre-se como dizimista</h2>
+                    <p><span class="preencher">[AQUI FICARIA UMA FRASE EXPLICANDO PARA QUE SERVE O CADASTRO]</span></p>
+                </div>
+                <!-- O formulário ainda não envia para lugar nenhum (o site não tem servidor). -->
+                <form class="formulario formulario-caixa">
+                    <div class="linha-campos">
+                        <div class="campo"><label for="dz-nome">Nome completo</label><input id="dz-nome" type="text" autocomplete="name"></div>
+                        <div class="campo"><label for="dz-nasc">Data de nascimento</label><input id="dz-nasc" type="date"></div>
+                    </div>
+                    <div class="linha-campos">
+                        <div class="campo"><label for="dz-tel">Telefone / WhatsApp</label><input id="dz-tel" type="tel" autocomplete="tel"></div>
+                        <div class="campo"><label for="dz-email">E-mail</label><input id="dz-email" type="email" autocomplete="email"></div>
+                    </div>
+                    <div class="campo"><label for="dz-com">Comunidade que frequenta</label><select id="dz-com"><option>[LISTA DAS COMUNIDADES]</option></select></div>
+                    <div><button type="button" class="btn btn-chama">Enviar cadastro</button></div>
+                </form>
+            </div>
+        </section>
     </main>
 
     <script src="js/components.js"></script>
+    <script src="js/paginas.js"></script>
 </body>
 
 </html>

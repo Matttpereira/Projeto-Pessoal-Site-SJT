@@ -8,54 +8,136 @@
     <title>Paróquia São Judas Tadeu - Santo André</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <section class="imagem-fundo">
-        <a href="index.html">
-            <img src="img/logo.png" width="725" height="146" alt="Paróquia São Judas Tadeu - página inicial">
-        </a>
-    </section>
+    <!-- O cabeçalho e o menu são colocados aqui pelo js/components.js -->
 
-    <!-- O menu é colocado aqui pelo js/components.js -->
+    <main>
+        <!-- Boas-vindas -->
+        <section class="destaque">
+            <div class="container duas-colunas">
+                <div class="pilha">
+                    <span class="sobretitulo">Seja bem-vindo à</span>
+                    <h1>Paróquia São Judas Tadeu</h1>
+                    <p class="texto-grande"><span class="preencher">[AQUI FICARIA UMA FRASE CURTA DE BOAS-VINDAS DA PARÓQUIA]</span></p>
+                    <div class="grupo-botoes">
+                        <a href="horarios.html" class="btn btn-verde">Ver horários das missas</a>
+                        <a href="horarios.html#como-chegar" class="btn btn-borda">Como chegar</a>
+                    </div>
+                </div>
+                <img class="foto" src="img/cartao-fachada.jpg" width="900" height="667" alt="Fachada da Igreja São Judas Tadeu">
+            </div>
+        </section>
 
-    <main class="conteudo">
-        <ul class="cartoes">
-            <li>
-                <a class="cartao" href="paroquia.html">
-                    <img src="img/cartao-paroquia.jpg" alt="">
-                    <span class="cartao-titulo">Nossa Paróquia</span>
-                </a>
-            </li>
-            <li>
-                <a class="cartao" href="horarios.html">
-                    <img src="img/cartao-missa.jpg" alt="">
-                    <span class="cartao-titulo">Horários</span>
-                </a>
-            </li>
-            <li>
-                <a class="cartao" href="padroeiro.html">
-                    <img class="foto-esquerda" src="img/cartao-padroeiro.jpg" alt="">
-                    <span class="cartao-titulo">Nosso Padroeiro</span>
-                </a>
-            </li>
-            <li>
-                <a class="cartao" href="pastorais.html">
-                    <img src="img/cartao-fachada.jpg" alt="">
-                    <span class="cartao-titulo">Pastorais</span>
-                </a>
-            </li>
-            <li>
-                <a class="cartao" href="dizimo.html">
-                    <img src="img/cartao-missa.jpg" alt="">
-                    <span class="cartao-titulo">Dízimo</span>
-                </a>
-            </li>
-        </ul>
+        <!-- Horários das missas -->
+        <section class="secao fundo-verde-claro">
+            <div class="container pilha-grande">
+                <div class="cabecalho-secao">
+                    <div class="pilha-curta">
+                        <span class="sobretitulo">Venha celebrar conosco</span>
+                        <h2>Horários das Missas</h2>
+                    </div>
+                    <a href="horarios.html">Ver todos os horários →</a>
+                </div>
+                <div class="grade">
+                    <div class="cartao cartao-claro">
+                        <h3>[DIA(S) DA SEMANA]</h3>
+                        <p><span class="preencher">[HORÁRIOS DAS MISSAS DESSE DIA]</span></p>
+                    </div>
+                    <div class="cartao cartao-claro">
+                        <h3>[DIA(S) DA SEMANA]</h3>
+                        <p><span class="preencher">[HORÁRIOS DAS MISSAS DESSE DIA]</span></p>
+                    </div>
+                    <div class="cartao cartao-claro">
+                        <h3>[DIA(S) DA SEMANA]</h3>
+                        <p><span class="preencher">[HORÁRIOS DAS MISSAS DESSE DIA]</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Próximos eventos -->
+        <section class="secao">
+            <div class="container pilha-grande">
+                <div class="cabecalho-secao">
+                    <div class="pilha-curta">
+                        <span class="sobretitulo">Agenda paroquial</span>
+                        <h2>Próximos eventos</h2>
+                    </div>
+                    <a href="agenda.html">Ver agenda completa →</a>
+                </div>
+                <div class="grade">
+                    <article class="cartao-foto">
+                        <div class="foto-provisoria">[FOTO OU ARTE DO EVENTO]</div>
+                        <div class="cartao-texto">
+                            <span class="sobretitulo">[DATA E HORÁRIO]</span>
+                            <h3>[NOME DO EVENTO]</h3>
+                            <p class="texto-pequeno"><span class="preencher">[DESCRIÇÃO CURTA DO EVENTO]</span></p>
+                        </div>
+                    </article>
+                    <article class="cartao-foto">
+                        <div class="foto-provisoria">[FOTO OU ARTE DO EVENTO]</div>
+                        <div class="cartao-texto">
+                            <span class="sobretitulo">[DATA E HORÁRIO]</span>
+                            <h3>[NOME DO EVENTO]</h3>
+                            <p class="texto-pequeno"><span class="preencher">[DESCRIÇÃO CURTA DO EVENTO]</span></p>
+                        </div>
+                    </article>
+                    <article class="cartao-foto">
+                        <div class="foto-provisoria">[FOTO OU ARTE DO EVENTO]</div>
+                        <div class="cartao-texto">
+                            <span class="sobretitulo">[DATA E HORÁRIO]</span>
+                            <h3>[NOME DO EVENTO]</h3>
+                            <p class="texto-pequeno"><span class="preencher">[DESCRIÇÃO CURTA DO EVENTO]</span></p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Padroeiro -->
+        <section class="secao secao-sem-topo">
+            <div class="container duas-colunas">
+                <img class="foto foto-arco foto-padroeiro" src="img/cartao-padroeiro.jpg" width="900" height="643"
+                    alt="Imagem de São Judas Tadeu na igreja">
+                <div class="pilha">
+                    <span class="sobretitulo">Nosso padroeiro</span>
+                    <h2>São Judas Tadeu</h2>
+                    <p><span class="preencher">[AQUI FICARIA UM TEXTO CURTO SOBRE O PADROEIRO E A DEVOÇÃO DA COMUNIDADE]</span></p>
+                    <p><span class="preencher">[AQUI FICARIA UM RESUMO DA HISTÓRIA DA PARÓQUIA]</span></p>
+                    <div><a href="paroquia.html" class="btn btn-borda">Conheça a paróquia</a></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Avisos -->
+        <section class="secao secao-sem-topo">
+            <div class="container pilha">
+                <h2 class="titulo-menor">Avisos paroquiais</h2>
+                <div class="lista-avisos">
+                    <div class="aviso"><span class="sobretitulo">[DATA]</span><span class="preencher">[AQUI FICARIA O TEXTO DO AVISO]</span></div>
+                    <div class="aviso"><span class="sobretitulo">[DATA]</span><span class="preencher">[AQUI FICARIA O TEXTO DO AVISO]</span></div>
+                    <div class="aviso"><span class="sobretitulo">[DATA]</span><span class="preencher">[AQUI FICARIA O TEXTO DO AVISO]</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chamada para o dízimo -->
+        <section class="secao fundo-verde">
+            <div class="container faixa-acao">
+                <div class="pilha-curta">
+                    <h2>Seja dizimista</h2>
+                    <p class="texto-claro">[AQUI FICARIA UMA FRASE SOBRE O DÍZIMO E A IMPORTÂNCIA PARA A COMUNIDADE]</p>
+                </div>
+                <a href="dizimo.html" class="btn btn-chama">Quero contribuir</a>
+            </div>
+        </section>
     </main>
 
+    <!-- O rodapé é colocado aqui pelo js/components.js -->
     <script src="js/components.js"></script>
 </body>
 

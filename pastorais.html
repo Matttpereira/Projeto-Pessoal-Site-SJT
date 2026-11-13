@@ -4,29 +4,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nossas Pastorais | Paróquia São Judas Tadeu - Santo André</title>
+    <title>Pastorais e Movimentos | Paróquia São Judas Tadeu - Santo André</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <section class="imagem-fundo-paginas">
-        <a href="index.html">
-            <img src="img/logo.png" width="525" height="106" alt="Paróquia São Judas Tadeu - página inicial">
-        </a>
-    </section>
+    <main>
+        <section class="topo-pagina">
+            <div class="container">
+                <span class="sobretitulo">Comunidade viva</span>
+                <h1>Pastorais e Movimentos</h1>
+                <p class="texto-grande"><span class="preencher">[AQUI FICARIA UMA FRASE CONVIDANDO A PARTICIPAR E SERVIR NA COMUNIDADE]</span></p>
+            </div>
+        </section>
 
-    <!-- O menu é colocado aqui pelo js/components.js -->
+        <section class="secao">
+            <div class="container pilha-grande">
+                <!--
+                    Filtros: o data-filtro de cada botão precisa ser igual
+                    ao data-categoria dos cartões daquela categoria.
+                    Quem faz o filtro funcionar é o js/paginas.js.
+                -->
+                <div class="filtros" role="group" aria-label="Filtrar por público">
+                    <button type="button" class="filtro" data-filtro="todas" aria-pressed="true">Todas</button>
+                    <button type="button" class="filtro" data-filtro="criancas" aria-pressed="false">[CATEGORIA — EX.: CRIANÇAS]</button>
+                    <button type="button" class="filtro" data-filtro="jovens" aria-pressed="false">[CATEGORIA — EX.: JOVENS]</button>
+                    <button type="button" class="filtro" data-filtro="familias" aria-pressed="false">[CATEGORIA — EX.: FAMÍLIAS]</button>
+                    <button type="button" class="filtro" data-filtro="liturgia" aria-pressed="false">[CATEGORIA — EX.: LITURGIA]</button>
+                </div>
 
-    <main class="conteudo">
-        <h1 class="titulo-pagina">Nossas Pastorais</h1>
+                <div class="grade grade-pastorais">
+                    <article class="cartao-foto" data-categoria="criancas">
+                        <div class="foto-provisoria">[FOTO DA PASTORAL]</div>
+                        <div class="cartao-texto">
+                            <span class="sobretitulo">[CATEGORIA]</span>
+                            <h3>[NOME DA PASTORAL]</h3>
+                            <p class="texto-pequeno"><span class="preencher">[DESCRIÇÃO CURTA DO QUE A PASTORAL FAZ]</span></p>
+                            <p class="texto-pequeno"><span class="preencher">[DIA, HORÁRIO E LOCAL DOS ENCONTROS]</span></p>
+                            <a href="contato.html">Quero participar →</a>
+                        </div>
+                    </article>
+                    <article class="cartao-foto" data-categoria="jovens">
+                        <div class="foto-provisoria">[FOTO DA PASTORAL]</div>
+                        <div class="cartao-texto">
+                            <span class="sobretitulo">[CATEGORIA]</span>
+                            <h3>[NOME DA PASTORAL]</h3>
+                            <p class="texto-pequeno"><span class="preencher">[DESCRIÇÃO CURTA DO QUE A PASTORAL FAZ]</span></p>
+                            <p class="texto-pequeno"><span class="preencher">[DIA, HORÁRIO E LOCAL DOS ENCONTROS]</span></p>
+                            <a href="contato.html">Quero participar →</a>
+                        </div>
+                    </article>
+                    <article class="cartao-foto" data-categoria="familias">
+                        <div class="foto-provisoria">[FOTO DA PASTORAL]</div>
+                        <div class="cartao-texto">
+                            <span class="sobretitulo">[CATEGORIA]</span>
+                            <h3>[NOME DA PASTORAL]</h3>
+                            <p class="texto-pequeno"><span class="preencher">[DESCRIÇÃO CURTA DO QUE A PASTORAL FAZ]</span></p>
+                            <p class="texto-pequeno"><span class="preencher">[DIA, HORÁRIO E LOCAL DOS ENCONTROS]</span></p>
+                            <a href="contato.html">Quero participar →</a>
+                        </div>
+                    </article>
+                    <article class="cartao-foto" data-categoria="liturgia">
+                        <div class="foto-provisoria">[FOTO DA PASTORAL]</div>
+                        <div class="cartao-texto">
+                            <span class="sobretitulo">[CATEGORIA]</span>
+                            <h3>[NOME DA PASTORAL]</h3>
+                            <p class="texto-pequeno"><span class="preencher">[DESCRIÇÃO CURTA DO QUE A PASTORAL FAZ]</span></p>
+                            <p class="texto-pequeno"><span class="preencher">[DIA, HORÁRIO E LOCAL DOS ENCONTROS]</span></p>
+                            <a href="contato.html">Quero participar →</a>
+                        </div>
+                    </article>
+                    <article class="cartao-foto" data-categoria="jovens">
+                        <div class="foto-provisoria">[FOTO DO MOVIMENTO]</div>
+                        <div class="cartao-texto">
+                            <span class="sobretitulo">[CATEGORIA]</span>
+                            <h3>[NOME DO MOVIMENTO]</h3>
+                            <p class="texto-pequeno"><span class="preencher">[DESCRIÇÃO CURTA DO QUE O MOVIMENTO FAZ]</span></p>
+                            <p class="texto-pequeno"><span class="preencher">[DIA, HORÁRIO E LOCAL DOS ENCONTROS]</span></p>
+                            <a href="contato.html">Quero participar →</a>
+                        </div>
+                    </article>
+                    <article class="cartao-foto" data-categoria="familias">
+                        <div class="foto-provisoria">[FOTO DO MOVIMENTO]</div>
+                        <div class="cartao-texto">
+                            <span class="sobretitulo">[CATEGORIA]</span>
+                            <h3>[NOME DO MOVIMENTO]</h3>
+                            <p class="texto-pequeno"><span class="preencher">[DESCRIÇÃO CURTA DO QUE O MOVIMENTO FAZ]</span></p>
+                            <p class="texto-pequeno"><span class="preencher">[DIA, HORÁRIO E LOCAL DOS ENCONTROS]</span></p>
+                            <a href="contato.html">Quero participar →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-        <!-- Conteúdo da página aqui -->
+        <section class="secao fundo-verde">
+            <div class="container faixa-acao">
+                <div class="pilha-curta">
+                    <h2>Quer servir na comunidade?</h2>
+                    <p class="texto-claro">[AQUI FICARIA UM CONVITE PARA NOVOS VOLUNTÁRIOS E COMO PROCURAR A COORDENAÇÃO]</p>
+                </div>
+                <a href="contato.html" class="btn btn-chama">Entre em contato</a>
+            </div>
+        </section>
     </main>
 
     <script src="js/components.js"></script>
+    <script src="js/paginas.js"></script>
 </body>
 
 </html>

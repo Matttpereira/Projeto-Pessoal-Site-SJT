@@ -8,7 +8,7 @@ Também é o meu projeto de estudo de HTML e CSS.
 
 ## 🚀 Status do Projeto
 > [!IMPORTANT]
-> **Em desenvolvimento:** o layout base está pronto (página inicial, páginas internas, menu, rodapé e versão para celular). Falta escrever o conteúdo de cada página.
+> **Em desenvolvimento:** o novo design (verde e creme, inspirado na imagem de São Judas Tadeu) está aplicado nas 8 páginas. Os textos entre [COLCHETES] ainda precisam ser preenchidos com as informações reais da paróquia.
 
 ---
 
@@ -16,16 +16,15 @@ Também é o meu projeto de estudo de HTML e CSS.
 * **HTML5**: estrutura semântica das páginas.
 * **CSS3**: estilo, variáveis CSS, Flexbox, Grid e media queries (responsividade).
 * **JavaScript**: componentes reaproveitados em todas as páginas (barra superior, menu e rodapé).
-* **Google Fonts**: tipografia *Bebas Neue*.
+* **Google Fonts**: *Lora* nos títulos e *Nunito Sans* no texto.
 
 ---
 
 ## 📋 Funcionalidades Atuais
-* **Barra superior**: endereço com link para o Google Maps e links para as redes sociais.
-* **Página inicial**: imagem de fundo com o logo e cartões que levam para cada página.
-* **Menu principal**: aparece em todas as páginas e destaca a página atual.
-* **Páginas internas**: Paróquia, Pastorais, Dízimo, Horários e Padroeiro (com banner e título).
-* **Rodapé**: endereço, redes sociais e direitos autorais.
+* **Cabeçalho e menu**: aparecem em todas as páginas, destacam a página atual e viram um botão "Menu" no celular.
+* **Página inicial**: boas-vindas, horários das missas, próximos eventos, padroeiro, avisos e chamada para o dízimo.
+* **Páginas internas**: A Paróquia (com o padroeiro), Missas e Horários (com mapa), Pastorais (com filtro), Sacramentos, Agenda, Dízimo e Contato.
+* **Rodapé**: endereço, horários, secretaria e redes sociais.
 * **Responsivo**: o layout se adapta a telas de celular.
 
 ---
@@ -34,15 +33,18 @@ Também é o meu projeto de estudo de HTML e CSS.
 ```
 ├── index.html          → página inicial
 ├── paroquia.html       → páginas internas
+├── horarios.html       → (Missas e Horários)
 ├── pastorais.html
+├── sacramentos.html
+├── agenda.html
 ├── dizimo.html
-├── horarios.html
-├── padroeiro.html
+├── contato.html
 ├── testes.html         → rascunho para testar ideias (fora do menu)
 ├── css/
-│   └── style.css       → estilo de todo o site
+│   └── style.css       → estilo de todo o site (cores no topo do arquivo)
 ├── js/
-│   └── components.js   → barra superior, menu e rodapé
+│   ├── components.js   → cabeçalho, menu e rodapé
+│   └── paginas.js      → filtro das pastorais e botão de copiar o PIX
 └── img/                → imagens (logo, fundos e fotos dos cartões)
 ```
 
@@ -52,8 +54,9 @@ Também é o meu projeto de estudo de HTML e CSS.
 - [x] Criar a página inicial e as páginas internas.
 - [x] Desenvolver o rodapé institucional.
 - [x] Aplicar responsividade para celulares.
-- [ ] Escrever o conteúdo de cada página interna.
-- [ ] Criar uma página ou seção de Contato.
+- [x] Aplicar o novo design e criar as páginas de Sacramentos, Agenda e Contato.
+- [ ] Preencher os textos entre [COLCHETES] e trocar as caixas tracejadas por fotos reais.
+- [ ] Fazer os formulários (contato, oração, cadastro de dizimista) enviarem as mensagens.
 - [ ] Publicar o site (por exemplo, no GitHub Pages).
 
 ---

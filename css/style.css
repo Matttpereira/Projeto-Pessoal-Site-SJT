@@ -1,17 +1,42 @@
 /* =========================================================
    VARIÁVEIS
+   Cores e medidas do design system "Paróquia São Judas Tadeu".
    Mude uma cor aqui e ela muda no site inteiro.
    ========================================================= */
 :root {
-    --cor-fundo: #a48b69;
-    --cor-marrom: #5a4632;
-    --cor-dourado: #c2a55e;
-    --cor-texto: #2b2b2b;
-    --cor-branco: #ffffff;
+    /* Fundos */
+    --creme: #FBF7EF;          /* fundo de todas as páginas */
+    --creme-escuro: #F3EBDD;   /* seções alternadas e cartões */
+    --borda: #E2D8C6;          /* linhas divisórias */
 
-    --fonte-principal: 'Bebas Neue', sans-serif;
-    --largura-conteudo: 1100px;
-    --transicao: 0.3s;
+    /* Texto */
+    --tinta: #2A241D;          /* texto principal */
+    --tinta-suave: #6B6157;    /* texto secundário */
+
+    /* Cores da imagem do padroeiro */
+    --verde: #2F5D46;          /* túnica: menu, títulos, links */
+    --verde-hover: #3A6B53;
+    --verde-escuro: #1F4231;
+    --verde-claro: #DCE8DF;    /* fundo de avisos e horários */
+    --dourado: #C9A14A;        /* SÓ decorativo, nunca texto em fundo claro */
+    --dourado-texto: #856419;  /* sobretítulos pequenos */
+    --chama: #B0412A;          /* um botão de destaque por tela (Dízimo) */
+    --branco: #FFFFFF;
+
+    /* Rodapé */
+    --rodape-fundo: #2A241D;
+    --rodape-linha: #4A4036;
+    --rodape-texto-suave: #CFC5B8;
+
+    /* Fontes */
+    --fonte-titulo: 'Lora', Georgia, serif;
+    --fonte-texto: 'Nunito Sans', system-ui, sans-serif;
+
+    /* Medidas */
+    --largura-conteudo: 1200px;
+    --raio: 16px;
+    --raio-pilula: 9999px;
+    --transicao: 0.2s;
 }
 
 /* =========================================================
@@ -21,242 +46,993 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: var(--fonte-principal);
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
+    background-color: var(--creme);
+    color: var(--tinta);
+    font-family: var(--fonte-texto);
+    font-size: 18px;
+    line-height: 28px;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-family: var(--fonte-titulo);
+    font-weight: 600;
+    color: var(--verde);
+}
+
+h1 { font-size: 48px; line-height: 54px; }
+h2 { font-size: 36px; line-height: 44px; }
+h3 { font-size: 22px; line-height: 30px; }
+
+/* Título menor de seção (ex.: "Avisos paroquiais") */
+.titulo-menor {
+    font-size: 28px;
+    line-height: 36px;
+}
+
+p {
+    margin: 0;
 }
 
 img {
     max-width: 100%;
     height: auto;
-}
-
-/* =========================================================
-   BARRA SUPERIOR (endereço + redes sociais)
-   Fica por cima da imagem de fundo / banner.
-   ========================================================= */
-.barra-superior {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    padding: 15px 20px;
-    font-size: 20px;
-}
-
-.barra-superior a {
-    color: var(--cor-branco);
-    text-decoration: none;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-}
-
-.barra-superior a:hover {
-    text-decoration: underline;
-}
-
-.redes-sociais a {
-    margin-left: 15px;
-}
-
-/* =========================================================
-   TOPO DAS PÁGINAS (home e páginas internas)
-   ========================================================= */
-.imagem-fundo,
-.imagem-fundo-paginas {
-    position: relative;
-    display: flex;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-}
-
-.imagem-fundo {
-    justify-content: center;
-    height: 100vh;
-    background-image: url(../img/fundo-home.jpg);
-}
-
-.imagem-fundo-paginas {
-    height: 50vh;
-    padding: 0 20px;
-    background-image: url(../img/banner-paginas.jpg);
-}
-
-.imagem-fundo img {
-    width: min(725px, 90vw);
-}
-
-.imagem-fundo-paginas img {
-    width: min(525px, 80vw);
-}
-
-.imagem-fundo img,
-.imagem-fundo-paginas img {
     display: block;
-    transition: transform var(--transicao), opacity var(--transicao);
 }
 
-.imagem-fundo a:hover img,
-.imagem-fundo-paginas a:hover img {
-    transform: scale(1.05);
-    opacity: 0.7;
+/* Links soltos no texto (os botões têm classe própria) */
+a:not([class]) {
+    color: var(--verde);
+    font-weight: 700;
+}
+
+a:not([class]):hover {
+    color: var(--verde-escuro);
+}
+
+/* Texto menor (descrições, legendas) */
+.texto-pequeno {
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.texto-grande {
+    font-size: 20px;
+    line-height: 30px;
+    max-width: 720px;
 }
 
 /* =========================================================
-   MENU PRINCIPAL (criado pelo js/components.js)
+   ESTRUTURA
    ========================================================= */
-.menu-principal {
+.container {
+    max-width: var(--largura-conteudo);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.container-estreito {
+    max-width: 800px;
+}
+
+.secao {
+    padding: 72px 0;
+}
+
+.secao-sem-topo {
+    padding-top: 0;
+}
+
+/* Fundos de seção */
+.fundo-creme-escuro { background-color: var(--creme-escuro); }
+.fundo-verde-claro  { background-color: var(--verde-claro); }
+.fundo-verde        { background-color: var(--verde); }
+
+/* Em fundo verde, títulos brancos e texto verde-claro */
+.fundo-verde h1,
+.fundo-verde h2 {
+    color: var(--branco);
+}
+
+.fundo-verde .texto-claro,
+.texto-claro {
+    color: var(--verde-claro);
+    font-weight: 700;
+}
+
+/* Empilha os itens um embaixo do outro com espaço entre eles */
+.pilha {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pilha-curta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pilha-grande {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* Duas colunas que viram uma só no celular */
+.duas-colunas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 48px;
+}
+
+.duas-colunas > * {
+    flex: 1 1 420px;
+}
+
+/* Grade de cartões */
+.grade {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.grade > * {
+    flex: 1 1 280px;
+}
+
+/* Título da seção à esquerda e link "Ver todos" à direita */
+.cabecalho-secao {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+/* Faixa com texto à esquerda e botão à direita */
+.faixa-acao {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px 32px;
+}
+
+.faixa-acao > div {
+    flex: 1 1 480px;
+}
+
+/* Caixa arredondada (usada em "Primeira vez aqui?", "Ficou com dúvida?") */
+.caixa {
+    border-radius: var(--raio);
+    padding: 40px;
+}
+
+/* =========================================================
+   SOBRETÍTULO (texto pequeno em dourado acima dos títulos)
+   ========================================================= */
+.sobretitulo {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dourado-texto);
+}
+
+.fundo-verde .sobretitulo,
+.evento-destaque .sobretitulo {
+    color: var(--verde-claro);
+}
+
+/* =========================================================
+   TEXTOS A PREENCHER
+   Tudo que está entre [COLCHETES] é texto provisório.
+   ========================================================= */
+.preencher {
+    color: var(--tinta-suave);
+    font-weight: 700;
+}
+
+.rodape .preencher {
+    color: var(--borda);
+}
+
+/* Caixa tracejada no lugar de uma foto que ainda não temos */
+.foto-provisoria {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    padding: 16px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 700;
+    color: var(--tinta-suave);
+    background-color: var(--creme-escuro);
+    border: 2px dashed #C9B89A;
+    border-radius: var(--raio);
+}
+
+/* =========================================================
+   FOTOS
+   ========================================================= */
+.foto {
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--raio);
+}
+
+/* Formato de arco, lembrando o medalhão do padroeiro */
+.foto-arco {
+    border-radius: var(--raio-pilula) var(--raio-pilula) var(--raio) var(--raio);
+}
+
+/* Foto de São Judas: mostra o lado esquerdo, onde está a imagem do santo */
+.foto-padroeiro {
+    height: 420px;
+    object-position: 15% center;
+}
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 24px;
+    border: 2px solid transparent;
+    border-radius: var(--raio-pilula);
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: filter var(--transicao), background-color var(--transicao);
+}
+
+.btn:hover {
+    filter: brightness(1.1);
+}
+
+.btn-verde {
+    background-color: var(--verde);
+    color: var(--branco);
+}
+
+.btn-chama {
+    background-color: var(--chama);
+    color: var(--branco);
+}
+
+.btn-borda {
+    background-color: transparent;
+    border-color: var(--verde);
+    color: var(--verde);
+}
+
+.btn-borda:hover {
+    background-color: var(--verde-claro);
+    filter: none;
+}
+
+.grupo-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* Botão redondo só com ícone (setas da agenda) */
+.btn-icone {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-color: var(--verde);
+    background-color: var(--creme);
+    color: var(--verde);
+}
+
+/* =========================================================
+   CABEÇALHO E MENU (criado pelo js/components.js)
+   ========================================================= */
+.topo {
     position: sticky;
     top: 0;
     z-index: 20;
-    background-color: var(--cor-marrom);
+    background-color: var(--verde);
 }
 
-.menu-principal ul {
+.topo-conteudo {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 5px 30px;
-    margin: 0;
-    padding: 12px 20px;
-    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
-.menu-principal a {
-    color: var(--cor-branco);
-    font-size: 22px;
-    letter-spacing: 1px;
+.marca img {
+    height: 48px;
+    width: auto;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+}
+
+.menu a:not(.btn) {
+    padding: 12px;
+    border-radius: 8px;
+    color: var(--branco);
+    font-size: 15px;
+    font-weight: 700;
     text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition: border-color var(--transicao);
+    transition: background-color var(--transicao);
 }
 
-.menu-principal a:hover,
-.menu-principal a[aria-current="page"] {
-    border-bottom-color: var(--cor-dourado);
+.menu a:not(.btn):hover {
+    background-color: var(--verde-hover);
+}
+
+/* Página atual: filete dourado embaixo */
+.menu a[aria-current="page"] {
+    box-shadow: inset 0 -3px 0 var(--dourado);
+}
+
+.menu .btn {
+    margin-left: 8px;
+}
+
+/* Botão "Menu" — só aparece em telas pequenas */
+.botao-menu {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 0 16px;
+    border: 2px solid var(--verde-claro);
+    border-radius: var(--raio-pilula);
+    background: transparent;
+    color: var(--branco);
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 /* =========================================================
-   CONTEÚDO
+   TOPO DAS PÁGINAS INTERNAS
    ========================================================= */
-.conteudo {
-    max-width: var(--largura-conteudo);
-    margin: 0 auto;
-    padding: 20px;
+.topo-pagina {
+    padding: 64px 0;
+    background-color: var(--creme-escuro);
 }
 
-.titulo-pagina {
-    text-align: center;
-    font-size: 50px;
-    color: #000000;
+.topo-pagina.fundo-verde {
+    background-color: var(--verde);
+}
+
+.topo-pagina .container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 /* =========================================================
-   CARTÕES DA PÁGINA INICIAL
-   Foto à esquerda + faixa dourada com o nome à direita.
+   PÁGINA INICIAL
    ========================================================= */
-.cartoes {
-    display: grid;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.destaque {
+    padding: 64px 0;
 }
 
+.destaque h1 {
+    font-size: 56px;
+    line-height: 60px;
+}
+
+.destaque .foto {
+    height: 440px;
+}
+
+/* =========================================================
+   CARTÕES
+   ========================================================= */
 .cartao {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    height: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px;
+    border-radius: var(--raio);
+    background-color: var(--creme-escuro);
+}
+
+/* Cartão claro, usado sobre fundos verdes */
+.cartao-claro {
+    background-color: var(--creme);
+}
+
+/* Cartão com foto em cima (eventos, pastorais) */
+.cartao-foto {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-    color: var(--cor-texto);
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    transition: transform var(--transicao), opacity var(--transicao);
+    border-radius: var(--raio);
+    background-color: var(--creme-escuro);
 }
 
-.cartao:hover {
-    transform: scale(1.02);
-    opacity: 0.85;
+.cartao-foto .foto-provisoria {
+    border-width: 0 0 2px 0;
+    border-radius: 0;
 }
 
-.cartao img {
+.cartao-foto .cartao-texto {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 8px;
+    padding: 24px;
+}
+
+.cartao-foto .cartao-texto > a:last-child {
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+/* =========================================================
+   LISTA DE AVISOS
+   ========================================================= */
+.lista-avisos {
+    border-top: 1px solid var(--borda);
+}
+
+.aviso {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--borda);
+}
+
+.aviso .sobretitulo {
+    flex: 0 0 160px;
+}
+
+.aviso .preencher {
+    flex: 1 1 400px;
+}
+
+/* =========================================================
+   A PARÓQUIA
+   ========================================================= */
+.linha-do-tempo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding-top: 24px;
+    border-top: 3px solid var(--dourado);
+}
+
+.linha-do-tempo > div {
+    flex: 1 1 220px;
+}
+
+.ano {
+    font-family: var(--fonte-titulo);
+    font-size: 28px;
+    line-height: 36px;
+    color: var(--dourado-texto);
+}
+
+.pessoa {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pessoa .foto-provisoria {
+    height: 260px;
+}
+
+.pessoa h3 {
+    color: var(--tinta);
+}
+
+/* =========================================================
+   MISSAS E HORÁRIOS
+   ========================================================= */
+.tabela-rolagem {
+    overflow-x: auto;
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+}
+
+.tabela {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    min-width: 560px;
+    border-collapse: collapse;
+    background-color: var(--creme);
 }
 
-/* Mostra o lado esquerdo da foto quando ela é cortada */
-.cartao img.foto-esquerda {
-    object-position: left;
+.tabela th,
+.tabela td {
+    padding: 16px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--borda);
 }
 
-.cartao-titulo {
+.tabela th {
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--branco);
+    background-color: var(--verde);
+}
+
+.tabela td:first-child {
+    font-weight: 700;
+}
+
+.mapa {
+    width: 100%;
+    min-height: 360px;
+    border: 0;
+    border-radius: var(--raio);
+}
+
+/* =========================================================
+   PASTORAIS (botões de filtro)
+   ========================================================= */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filtro {
+    min-height: 44px;
+    padding: 0 20px;
+    border: 1px solid var(--verde);
+    border-radius: var(--raio-pilula);
+    background-color: var(--creme);
+    color: var(--verde);
+    font: 700 15px/20px var(--fonte-texto);
+    cursor: pointer;
+}
+
+.filtro[aria-pressed="true"] {
+    background-color: var(--verde);
+    color: var(--branco);
+}
+
+.grade-pastorais > * {
+    flex: 1 1 340px;
+}
+
+/* =========================================================
+   SACRAMENTOS
+   ========================================================= */
+.sacramento {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 48px;
+    padding: 32px;
+    border-radius: var(--raio);
+    background-color: var(--creme-escuro);
+}
+
+.sacramento-titulo {
+    flex: 1 1 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sacramento-titulo h2 {
+    font-size: 28px;
+    line-height: 36px;
+}
+
+.sacramento-detalhes {
+    flex: 2 1 420px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.sacramento-detalhes > div {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.rotulo {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 700;
+    color: var(--verde);
+}
+
+/* Número dentro do círculo dourado */
+.numero {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    text-align: center;
-    font-size: clamp(32px, 5vw, 64px);
-    line-height: 1;
-    background-color: var(--cor-dourado);
+    width: 48px;
+    height: 48px;
+    border-radius: var(--raio-pilula);
+    background-color: var(--dourado);
+    color: var(--tinta);
+    font-family: var(--fonte-titulo);
+    font-size: 22px;
+}
+
+/* =========================================================
+   AGENDA
+   ========================================================= */
+.evento-destaque {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    border-radius: var(--raio);
+    background-color: var(--verde);
+}
+
+.evento-destaque .foto-provisoria {
+    flex: 1 1 400px;
+    min-height: 320px;
+    border: 0;
+    border-radius: 0;
+    background-color: var(--verde-hover);
+    color: var(--branco);
+}
+
+.evento-destaque .pilha {
+    flex: 1 1 480px;
+    padding: 40px;
+}
+
+.evento-destaque h2 {
+    color: var(--branco);
+}
+
+.navegacao-mes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.evento {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 32px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--borda);
+}
+
+.evento > div:nth-child(2) {
+    flex: 1 1 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.evento h3 {
+    color: var(--tinta);
+}
+
+.data {
+    flex: 0 0 96px;
+    height: 96px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--raio);
+    background-color: var(--verde-claro);
+    color: var(--verde);
+}
+
+.data b {
+    font-family: var(--fonte-titulo);
+    font-size: 22px;
+    line-height: 28px;
+}
+
+.data span {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   DÍZIMO
+   ========================================================= */
+.forma-contribuir {
+    padding: 32px;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.forma-contribuir > * {
+    align-self: stretch;
+}
+
+.forma-contribuir .btn,
+.forma-contribuir .qr-code {
+    align-self: flex-start;
+}
+
+.qr-code {
+    width: 180px;
+    height: 180px;
+    min-height: 0;
+}
+
+/* =========================================================
+   FORMULÁRIOS
+   ========================================================= */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formulario-caixa {
+    padding: 32px;
+    border-radius: var(--raio);
+    background-color: var(--creme-escuro);
+}
+
+.fundo-verde .formulario-caixa {
+    background-color: var(--creme);
+}
+
+.linha-campos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.campo {
+    flex: 1 1 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo label {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 700;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    min-height: 48px;
+    padding: 12px 16px;
+    border: 1px solid #8E8172;
+    border-radius: 8px;
+    background-color: var(--creme);
+    color: var(--tinta);
+    font: 400 16px/24px var(--fonte-texto);
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    outline: 3px solid var(--dourado);
+    outline-offset: 1px;
+}
+
+/* =========================================================
+   CONTATO
+   ========================================================= */
+.contato-colunas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    align-items: flex-start;
+}
+
+.contato-colunas > form {
+    flex: 2 1 520px;
+}
+
+.contato-colunas > aside {
+    flex: 1 1 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px;
+    border-radius: var(--raio);
+    background-color: var(--verde-claro);
+}
+
+.info {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.info svg {
+    flex: 0 0 24px;
+    margin-top: 2px;
+    color: var(--verde);
+}
+
+.info strong {
+    display: block;
+    font-size: 15px;
+    line-height: 22px;
 }
 
 /* =========================================================
    RODAPÉ (criado pelo js/components.js)
    ========================================================= */
 .rodape {
-    margin-top: 40px;
-    padding: 30px 20px;
-    text-align: center;
-    font-size: 20px;
-    color: var(--cor-branco);
-    background-color: var(--cor-marrom);
+    background-color: var(--rodape-fundo);
+    color: var(--creme);
 }
 
-.rodape p {
-    margin: 8px 0;
+.rodape-colunas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-top: 48px;
+    padding-bottom: 48px;
 }
 
+.rodape-colunas > div {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rodape-colunas > div:first-child {
+    flex-basis: 240px;
+}
+
+.rodape h3 {
+    color: var(--creme);
+}
+
+.rodape strong,
+.rodape p,
 .rodape a {
-    color: var(--cor-branco);
+    font-size: 15px;
+    line-height: 22px;
 }
 
-.rodape .redes-sociais a {
-    margin: 0 8px;
+.rodape a:not(.btn) {
+    color: var(--creme);
+}
+
+.rodape .btn {
+    align-self: flex-start;
+    margin-top: 4px;
+}
+
+.redes-sociais {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+}
+
+.rodape-final {
+    border-top: 1px solid var(--rodape-linha);
+}
+
+.rodape-final p {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    color: var(--rodape-texto-suave);
 }
 
 /* =========================================================
-   CELULAR (telas até 700px)
+   TELAS MÉDIAS (até 1100px): menu vira botão
+   ========================================================= */
+@media (max-width: 1100px) {
+    .botao-menu {
+        display: inline-flex;
+    }
+
+    .menu {
+        display: none;
+        flex-basis: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        padding-bottom: 8px;
+    }
+
+    /* O js/components.js coloca a classe "aberto" ao clicar no botão */
+    .menu.aberto {
+        display: flex;
+    }
+
+    .menu .btn {
+        margin: 8px 0 0;
+    }
+}
+
+/* =========================================================
+   CELULAR (até 700px)
    ========================================================= */
 @media (max-width: 700px) {
-    .barra-superior {
-        flex-direction: column;
-        font-size: 16px;
-        text-align: center;
+    body {
+        font-size: 17px;
     }
 
-    .imagem-fundo-paginas {
-        justify-content: center;
-        height: 40vh;
+    h1 { font-size: 36px; line-height: 42px; }
+    h2 { font-size: 28px; line-height: 36px; }
+
+    .destaque h1 {
+        font-size: 40px;
+        line-height: 46px;
     }
 
-    .menu-principal a {
-        font-size: 18px;
+    .titulo-menor,
+    .sacramento-titulo h2 {
+        font-size: 24px;
+        line-height: 32px;
     }
 
-    .titulo-pagina {
-        font-size: 38px;
+    .secao,
+    .destaque,
+    .topo-pagina {
+        padding: 48px 0;
     }
 
-    .cartao {
-        grid-template-columns: 1fr 1fr;
-        height: 140px;
+    .secao-sem-topo {
+        padding-top: 0;
+    }
+
+    .destaque .foto {
+        height: 280px;
+    }
+
+    .marca img {
+        height: 36px;
+    }
+
+    .caixa,
+    .sacramento,
+    .formulario-caixa,
+    .evento-destaque .pilha,
+    .contato-colunas > aside {
+        padding: 24px;
+    }
+
+    /* Evita que colunas com largura mínima grande estourem a tela */
+    .duas-colunas > *,
+    .grade > *,
+    .faixa-acao > div,
+    .contato-colunas > *,
+    .sacramento-detalhes,
+    .evento-destaque > * {
+        flex-basis: 100%;
     }
 }

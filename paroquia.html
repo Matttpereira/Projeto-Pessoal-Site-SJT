@@ -4,26 +4,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nossa Paróquia | Paróquia São Judas Tadeu - Santo André</title>
+    <title>A Paróquia | Paróquia São Judas Tadeu - Santo André</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <section class="imagem-fundo-paginas">
-        <a href="index.html">
-            <img src="img/logo.png" width="525" height="106" alt="Paróquia São Judas Tadeu - página inicial">
-        </a>
-    </section>
+    <main>
+        <section class="topo-pagina">
+            <div class="container">
+                <span class="sobretitulo">Quem somos</span>
+                <h1>A Paróquia</h1>
+                <p class="texto-grande"><span class="preencher">[AQUI FICARIA UMA FRASE QUE RESUMA A MISSÃO DA PARÓQUIA]</span></p>
+            </div>
+        </section>
 
-    <!-- O menu é colocado aqui pelo js/components.js -->
+        <!-- História -->
+        <section class="secao">
+            <div class="container duas-colunas">
+                <div class="pilha">
+                    <h2>Nossa história</h2>
+                    <p><span class="preencher">[AQUI FICARIA A HISTÓRIA DA PARÓQUIA: COMO E QUANDO FOI FUNDADA, QUEM FORAM OS PRIMEIROS PADRES E COMO A COMUNIDADE CRESCEU]</span></p>
+                    <p><span class="preencher">[AQUI FICARIA UM SEGUNDO PARÁGRAFO, SE NECESSÁRIO]</span></p>
+                </div>
+                <img class="foto" src="img/cartao-paroquia.jpg" width="900" height="457" style="height: 380px;"
+                    alt="Torres e cruz da fachada da Igreja São Judas Tadeu">
+            </div>
+        </section>
 
-    <main class="conteudo">
-        <h1 class="titulo-pagina">Nossa Paróquia</h1>
+        <!-- Linha do tempo -->
+        <section class="secao secao-sem-topo">
+            <div class="container pilha-grande">
+                <h2 class="titulo-menor">Marcos da nossa caminhada</h2>
+                <div class="linha-do-tempo">
+                    <div class="pilha-curta"><span class="ano">[ANO]</span><p class="texto-pequeno"><span class="preencher">[ACONTECIMENTO IMPORTANTE]</span></p></div>
+                    <div class="pilha-curta"><span class="ano">[ANO]</span><p class="texto-pequeno"><span class="preencher">[ACONTECIMENTO IMPORTANTE]</span></p></div>
+                    <div class="pilha-curta"><span class="ano">[ANO]</span><p class="texto-pequeno"><span class="preencher">[ACONTECIMENTO IMPORTANTE]</span></p></div>
+                    <div class="pilha-curta"><span class="ano">[ANO]</span><p class="texto-pequeno"><span class="preencher">[ACONTECIMENTO IMPORTANTE]</span></p></div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Conteúdo da página aqui -->
+        <!-- Padroeiro -->
+        <section id="padroeiro" class="secao fundo-verde-claro">
+            <div class="container duas-colunas">
+                <img class="foto foto-arco foto-padroeiro" src="img/cartao-padroeiro.jpg" width="900" height="643"
+                    alt="Imagem de São Judas Tadeu na igreja">
+                <div class="pilha">
+                    <span class="sobretitulo">Nosso padroeiro</span>
+                    <h2>São Judas Tadeu</h2>
+                    <p><span class="preencher">[AQUI FICARIA UM TEXTO SOBRE A VIDA DE SÃO JUDAS TADEU E O SIGNIFICADO DA SUA IMAGEM]</span></p>
+                    <div class="cartao cartao-claro">
+                        <strong class="rotulo">Oração a São Judas Tadeu</strong>
+                        <p class="texto-pequeno"><span class="preencher">[AQUI FICARIA A ORAÇÃO USADA PELA PARÓQUIA]</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clero e equipe -->
+        <section class="secao">
+            <div class="container pilha-grande">
+                <div class="pilha-curta">
+                    <span class="sobretitulo">Quem cuida da comunidade</span>
+                    <h2>Clero e equipe</h2>
+                </div>
+                <div class="grade">
+                    <div class="pessoa"><div class="foto-provisoria">[FOTO]</div><h3>[NOME]</h3><span class="sobretitulo">[FUNÇÃO — EX.: PÁROCO]</span></div>
+                    <div class="pessoa"><div class="foto-provisoria">[FOTO]</div><h3>[NOME]</h3><span class="sobretitulo">[FUNÇÃO — EX.: VIGÁRIO]</span></div>
+                    <div class="pessoa"><div class="foto-provisoria">[FOTO]</div><h3>[NOME]</h3><span class="sobretitulo">[FUNÇÃO — EX.: DIÁCONO]</span></div>
+                    <div class="pessoa"><div class="foto-provisoria">[FOTO]</div><h3>[NOME]</h3><span class="sobretitulo">[FUNÇÃO — EX.: SECRETARIA]</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comunidades -->
+        <section class="secao secao-sem-topo">
+            <div class="container pilha-grande">
+                <h2 class="titulo-menor">Comunidades e capelas</h2>
+                <div class="grade">
+                    <div class="cartao"><h3>[NOME DA COMUNIDADE OU CAPELA]</h3><p class="texto-pequeno"><span class="preencher">[ENDEREÇO]</span></p><p class="texto-pequeno"><span class="preencher">[HORÁRIOS DE MISSA NESSA COMUNIDADE]</span></p></div>
+                    <div class="cartao"><h3>[NOME DA COMUNIDADE OU CAPELA]</h3><p class="texto-pequeno"><span class="preencher">[ENDEREÇO]</span></p><p class="texto-pequeno"><span class="preencher">[HORÁRIOS DE MISSA NESSA COMUNIDADE]</span></p></div>
+                    <div class="cartao"><h3>[NOME DA COMUNIDADE OU CAPELA]</h3><p class="texto-pequeno"><span class="preencher">[ENDEREÇO]</span></p><p class="texto-pequeno"><span class="preencher">[HORÁRIOS DE MISSA NESSA COMUNIDADE]</span></p></div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="js/components.js"></script>

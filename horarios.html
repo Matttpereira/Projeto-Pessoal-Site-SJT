@@ -4,26 +4,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nossos Horários | Paróquia São Judas Tadeu - Santo André</title>
+    <title>Missas e Horários | Paróquia São Judas Tadeu - Santo André</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <section class="imagem-fundo-paginas">
-        <a href="index.html">
-            <img src="img/logo.png" width="525" height="106" alt="Paróquia São Judas Tadeu - página inicial">
-        </a>
-    </section>
+    <main>
+        <section class="topo-pagina">
+            <div class="container">
+                <span class="sobretitulo">Venha celebrar conosco</span>
+                <h1>Missas e Horários</h1>
+                <p class="texto-grande"><span class="preencher">[AQUI FICARIA UMA FRASE CONVIDANDO PARA AS CELEBRAÇÕES]</span></p>
+            </div>
+        </section>
 
-    <!-- O menu é colocado aqui pelo js/components.js -->
+        <!-- Tabela de missas -->
+        <section class="secao">
+            <div class="container pilha">
+                <h2>Horários das Missas</h2>
+                <div class="tabela-rolagem">
+                    <table class="tabela">
+                        <thead>
+                            <tr><th>Dia</th><th>Horários</th><th>Local</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>[DIA DA SEMANA]</td><td><span class="preencher">[HORÁRIOS]</span></td><td><span class="preencher">[MATRIZ OU NOME DA COMUNIDADE]</span></td></tr>
+                            <tr><td>[DIA DA SEMANA]</td><td><span class="preencher">[HORÁRIOS]</span></td><td><span class="preencher">[MATRIZ OU NOME DA COMUNIDADE]</span></td></tr>
+                            <tr><td>[DIA DA SEMANA]</td><td><span class="preencher">[HORÁRIOS]</span></td><td><span class="preencher">[MATRIZ OU NOME DA COMUNIDADE]</span></td></tr>
+                            <tr><td>[DIA DA SEMANA]</td><td><span class="preencher">[HORÁRIOS]</span></td><td><span class="preencher">[MATRIZ OU NOME DA COMUNIDADE]</span></td></tr>
+                            <tr><td>[DIA DA SEMANA]</td><td><span class="preencher">[HORÁRIOS]</span></td><td><span class="preencher">[MATRIZ OU NOME DA COMUNIDADE]</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="texto-pequeno"><span class="preencher">[AQUI FICARIA UM AVISO SOBRE MUDANÇAS DE HORÁRIO EM FERIADOS OU DATAS ESPECIAIS]</span></p>
+            </div>
+        </section>
 
-    <main class="conteudo">
-        <h1 class="titulo-pagina">Nossos Horários</h1>
+        <!-- Outros horários -->
+        <section class="secao fundo-verde-claro">
+            <div class="container pilha-grande">
+                <h2 class="titulo-menor">Outros horários</h2>
+                <div class="grade">
+                    <div class="cartao cartao-claro"><h3>Confissões</h3><p><span class="preencher">[DIAS E HORÁRIOS DE ATENDIMENTO DE CONFISSÕES]</span></p></div>
+                    <div class="cartao cartao-claro"><h3>Secretaria paroquial</h3><p><span class="preencher">[DIAS E HORÁRIOS DE FUNCIONAMENTO]</span></p></div>
+                    <div class="cartao cartao-claro"><h3>[OUTRA CELEBRAÇÃO — EX.: NOVENA, ADORAÇÃO]</h3><p><span class="preencher">[DIAS E HORÁRIOS]</span></p></div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Conteúdo da página aqui -->
+        <!-- Como chegar -->
+        <section id="como-chegar" class="secao">
+            <div class="container duas-colunas" style="align-items: stretch;">
+                <div class="pilha">
+                    <span class="sobretitulo">Onde estamos</span>
+                    <h2>Como chegar</h2>
+                    <p>Rua Vitória Régia, 933 - Bairro Campestre<br>Santo André - SP</p>
+                    <p class="texto-pequeno"><span class="preencher">[INFORMAÇÕES DE ESTACIONAMENTO, ÔNIBUS E ACESSIBILIDADE]</span></p>
+                    <div class="grupo-botoes">
+                        <a href="https://maps.app.goo.gl/Vi4xch855Y2pte2i9" target="_blank" rel="noopener" class="btn btn-verde">Abrir no Google Maps</a>
+                    </div>
+                </div>
+                <iframe class="mapa" title="Mapa com a localização da Paróquia São Judas Tadeu"
+                    src="https://www.google.com/maps?q=Rua+Vit%C3%B3ria+R%C3%A9gia,+933,+Campestre,+Santo+Andr%C3%A9+-+SP&output=embed"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <!-- Primeira vez -->
+        <section class="secao secao-sem-topo">
+            <div class="container">
+                <div class="caixa fundo-creme-escuro faixa-acao">
+                    <div class="pilha-curta">
+                        <h2 class="titulo-menor">Primeira vez aqui?</h2>
+                        <p><span class="preencher">[AQUI FICARIA UM TEXTO ACOLHEDOR PARA QUEM VAI À MISSA PELA PRIMEIRA VEZ]</span></p>
+                    </div>
+                    <a href="contato.html" class="btn btn-borda">Fale com a gente</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="js/components.js"></script>
