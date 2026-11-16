@@ -141,7 +141,7 @@ Resultado do cálculo WCAG (o mínimo é 4,5:1 para texto e 3:1 para bordas e í
 4. [ ] **Agenda:** decidir se fica estática ou ganha navegação por mês, alimentada por um arquivo JSON simples. Resolver o destaque da festa.
 5. [ ] **SEO e compartilhamento:** favicon, Open Graph, `theme-color`, descrições por página, `404.html`, `robots.txt` e `sitemap.xml`.
 6. [ ] **Ajustes de design** da seção 5 e revisão com **design-taste-frontend**.
-7. [ ] **Publicar:** GitHub Pages (grátis) e, se quiser, um domínio próprio.
+7. [ ] **Publicar:** o site já está no GitHub Pages (https://matttpereira.github.io/Projeto-Pessoal-Site-SJT/), mas com a versão antiga. Cada envio (`git push`) atualiza o site público; se quiser, configurar depois um domínio próprio.
 8. [ ] **Revisão final:** rodar de novo a **web-design-guidelines** e testar menu, filtro e formulários com a **playwright-cli**.
 
 ---

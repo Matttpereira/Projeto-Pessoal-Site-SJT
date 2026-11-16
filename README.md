@@ -4,6 +4,8 @@ Este projeto é o website da **Paróquia São Judas Tadeu**, em Santo André - S
 
 Também é o meu projeto de estudo de HTML e CSS.
 
+🔗 **Ver online:** https://matttpereira.github.io/Projeto-Pessoal-Site-SJT/
+
 ---
 
 ## 🚀 Status do Projeto
@@ -39,7 +41,6 @@ Também é o meu projeto de estudo de HTML e CSS.
 ├── agenda.html
 ├── dizimo.html
 ├── contato.html
-├── testes.html         → rascunho para testar ideias (fora do menu)
 ├── css/
 │   └── style.css       → estilo de todo o site (cores no topo do arquivo)
 ├── js/
@@ -57,10 +58,21 @@ Também é o meu projeto de estudo de HTML e CSS.
 - [x] Aplicar o novo design e criar as páginas de Sacramentos, Agenda e Contato.
 - [ ] Preencher os textos entre [COLCHETES] e trocar as caixas tracejadas por fotos reais.
 - [ ] Fazer os formulários (contato, oração, cadastro de dizimista) enviarem as mensagens.
-- [ ] Publicar o site (por exemplo, no GitHub Pages).
+- [x] Publicar o site no GitHub Pages.
+- [x] Melhorar acessibilidade (foco do teclado, contraste, menu e filtro).
+
+A análise completa e a lista detalhada do que falta estão no [RELATORIO.md](RELATORIO.md).
 
 ---
 
 ## 📝 Como visualizar
+**Online:** acesse o link do GitHub Pages acima.
+
+**Localmente:**
 1. Clone este repositório.
 2. Abra o arquivo `index.html` em qualquer navegador.
+
+---
+
+## 📄 Licença
+Distribuído sob a licença MIT. Veja [LICENSE](LICENSE).
