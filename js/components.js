@@ -1,5 +1,5 @@
 const header = `
-    < header class="barra-superior" >
+    <header class="barra-superior">
         <span class="localizacao">
             <a href="https://maps.app.goo.gl/Vi4xch855Y2pte2i9" target="_blank" rel="noopener">
                 Rua Vitoria Regia, 933 Bairro Campestre - Santo André - SP
