@@ -19,7 +19,7 @@
     --verde-escuro: #1F4231;
     --verde-claro: #DCE8DF;    /* fundo de avisos e horários */
     --dourado: #C9A14A;        /* SÓ decorativo, nunca texto em fundo claro */
-    --dourado-texto: #856419;  /* sobretítulos pequenos */
+    --dourado-texto: #7A5A12;  /* sobretítulos pequenos (escuro o bastante até no verde-claro) */
     --chama: #B0412A;          /* um botão de destaque por tela (Dízimo) */
     --branco: #FFFFFF;
 
@@ -46,8 +46,51 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+/* Rolagem suave só para quem não pediu "reduzir movimento" no sistema */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Seções com id (ex.: #como-chegar) não ficam escondidas atrás do cabeçalho fixo */
+[id] {
+    scroll-margin-top: 96px;
+}
+
+/* Contorno de foco ao navegar pelo teclado (Tab) */
+:focus-visible {
+    outline: 3px solid var(--verde);
+    outline-offset: 2px;
+}
+
+/* Sobre fundos verdes, o contorno fica branco para aparecer */
+.topo :focus-visible,
+.fundo-verde :focus-visible,
+.evento-destaque :focus-visible {
+    outline-color: var(--branco);
+}
+
+/* Link "Pular para o conteúdo": escondido até receber foco pelo teclado */
+.pular-conteudo {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 30;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: var(--creme);
+    color: var(--verde);
+    font-weight: 700;
+    transform: translateY(-200%);
+}
+
+.pular-conteudo:focus {
+    transform: none;
+}
+
+main:focus {
+    outline: none;
 }
 
 body {
@@ -211,6 +254,14 @@ a:not([class]):hover {
 .faixa-acao > div {
     flex: 1 1 480px;
 }
+
+/* Variações que antes estavam escritas direto no HTML (style="...") */
+.secao-fundo-curto { padding-bottom: 48px; }     /* agenda: destaque da festa */
+.duas-colunas-esticar { align-items: stretch; }  /* horários: texto e mapa da mesma altura */
+.foto-media { height: 380px; }                   /* a paróquia: foto da história */
+.foto-provisoria-alta { height: 340px; }         /* dízimo: foto da comunidade */
+.mapa-contato { height: 380px; }                 /* contato: mapa */
+.titulo-pequeno { font-size: 22px; line-height: 30px; } /* contato: "Secretaria paroquial" */
 
 /* Caixa arredondada (usada em "Primeira vez aqui?", "Ficou com dúvida?") */
 .caixa {
@@ -843,7 +894,7 @@ a:not([class]):hover {
 .campo input:focus,
 .campo select:focus,
 .campo textarea:focus {
-    outline: 3px solid var(--dourado);
+    outline: 3px solid var(--verde);
     outline-offset: 1px;
 }
 

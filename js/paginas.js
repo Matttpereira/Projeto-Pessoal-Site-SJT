@@ -6,23 +6,52 @@
 // ---------------------------------------------------------
 const filtros = document.querySelectorAll('.filtro');
 const cartoesPastorais = document.querySelectorAll('[data-categoria]');
+const statusFiltro = document.querySelector('#status-filtro');
+
+function aplicarFiltro(botao) {
+    const escolhido = botao.dataset.filtro;
+    let visiveis = 0;
+
+    // Marca só o botão clicado como ativo
+    filtros.forEach(function (outro) {
+        outro.setAttribute('aria-pressed', outro === botao);
+    });
+
+    // Mostra só os cartões da categoria escolhida
+    cartoesPastorais.forEach(function (cartao) {
+        const mostrar = escolhido === 'todas' || cartao.dataset.categoria === escolhido;
+        cartao.hidden = !mostrar;
+        if (mostrar) visiveis++;
+    });
+
+    // Avisa quantas aparecem (e quando a categoria está vazia)
+    if (statusFiltro) {
+        if (visiveis === 0) {
+            statusFiltro.textContent = 'Nenhuma pastoral nesta categoria por enquanto.';
+        } else if (visiveis === 1) {
+            statusFiltro.textContent = 'Mostrando 1 pastoral.';
+        } else {
+            statusFiltro.textContent = 'Mostrando ' + visiveis + ' pastorais.';
+        }
+    }
+
+    // Guarda o filtro no endereço (ex.: pastorais.html#jovens) para poder compartilhar
+    const endereco = escolhido === 'todas' ? location.pathname : '#' + escolhido;
+    history.replaceState(null, '', endereco);
+}
 
 filtros.forEach(function (botao) {
     botao.addEventListener('click', function () {
-        const escolhido = botao.dataset.filtro;
-
-        // Marca só o botão clicado como ativo
-        filtros.forEach(function (outro) {
-            outro.setAttribute('aria-pressed', outro === botao);
-        });
-
-        // Mostra só os cartões da categoria escolhida
-        cartoesPastorais.forEach(function (cartao) {
-            const mostrar = escolhido === 'todas' || cartao.dataset.categoria === escolhido;
-            cartao.hidden = !mostrar;
-        });
+        aplicarFiltro(botao);
     });
 });
+
+// Se a página abrir com um filtro no endereço (ex.: #jovens), já aplica
+const filtroDoEndereco = document.querySelector('.filtro[data-filtro="' + location.hash.slice(1) + '"]');
+
+if (filtroDoEndereco) {
+    aplicarFiltro(filtroDoEndereco);
+}
 
 // ---------------------------------------------------------
 // DÍZIMO: botão "Copiar chave PIX"

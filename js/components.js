@@ -88,7 +88,37 @@ document.body.insertAdjacentHTML('beforeend', rodape);
 const botaoMenu = document.querySelector('.botao-menu');
 const menu = document.querySelector('.menu');
 
+function fecharMenu() {
+    menu.classList.remove('aberto');
+    botaoMenu.setAttribute('aria-expanded', 'false');
+}
+
 botaoMenu.addEventListener('click', function () {
     const aberto = menu.classList.toggle('aberto');
     botaoMenu.setAttribute('aria-expanded', aberto);
 });
+
+// Fecha o menu ao escolher uma página (útil em links como "horarios.html#como-chegar")
+menu.addEventListener('click', function (evento) {
+    if (evento.target.closest('a')) {
+        fecharMenu();
+    }
+});
+
+// Fecha o menu com a tecla Esc e devolve o foco ao botão
+document.addEventListener('keydown', function (evento) {
+    if (evento.key === 'Escape' && menu.classList.contains('aberto')) {
+        fecharMenu();
+        botaoMenu.focus();
+    }
+});
+
+// Link "Pular para o conteúdo": primeiro item ao apertar Tab,
+// leva direto ao <main> sem passar pelo menu inteiro
+const conteudo = document.querySelector('main');
+
+if (conteudo) {
+    conteudo.id = 'conteudo';
+    conteudo.tabIndex = -1;
+    document.body.insertAdjacentHTML('afterbegin', '<a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>');
+}
